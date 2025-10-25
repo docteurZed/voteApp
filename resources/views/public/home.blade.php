@@ -185,23 +185,69 @@
 
         {{-- Liste des communiqués --}}
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:px-16">
+            @php
+                $communiques = [
+                    [
+                        'id' => 7,
+                        'description' =>
+                            "Annonce du débat électoral des candidats pour l'élection du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 24)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 6,
+                        'description' =>
+                            "Lancement officiel de la campagne électorale pour l'élection du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 21)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 5,
+                        'description' =>
+                            "Publication de la liste définitive des candidats pour l'élection du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 20)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 4,
+                        'description' =>
+                            "Publication de la liste provisoire des candidats pour l'élection du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 19)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 3,
+                        'description' =>
+                            "Prolongation du délai de dépôt des candidatures pour l'élection du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 14)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 2,
+                        'description' =>
+                            "Précision sur les pièces justificatives d'adhésion pour le dépôt de candidatures.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 9)->format('d M Y'),
+                    ],
+                    [
+                        'id' => 1,
+                        'description' =>
+                            'Lancement du processus électoral et ouverture des candidatures pour le renouvellement du bureau exécutif local AEMPO-LOME.',
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 8)->format('d M Y'),
+                    ],
+                ];
+            @endphp
             @forelse ($communiques as $communique)
                 <div
                     class="bg-gray-800/20 rounded-xl shadow-md border border-gray-800 overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="p-6 flex flex-col justify-between h-full">
                         <div>
                             <h2 class="font-bold text-red-700 mb-2">
-                                {{ $communique->title }}
+                                COMMUNIQUE 00{{ $communique['id'] }}
                             </h2>
                             <div class="text-gray-400 text-sm mb-4">
-                                {{ $communique->description }}
+                                {{ $communique['description'] }}
                             </div>
                         </div>
                         <div class="mt-auto">
                             <p class="text-sm text-gray-500 italic mb-3">
-                                Publié le {{ $communique->published_at->format('d M Y') }}
+                                Publié le {{ $communique['published_at'] }}
                             </p>
-                            <a href="{{ asset('communique/' . $communique->id . '.pdf') }}" target="_blank"
+                            <a href="{{ asset('communique/' . $communique['id'] . '.pdf') }}" target="_blank"
                                 class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-green-300 transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3 h-3 mr-2"
                                     viewBox="0 0 16 16">

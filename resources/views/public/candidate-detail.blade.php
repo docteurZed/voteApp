@@ -7,21 +7,8 @@
     <section class="container mx-auto max-w-5xl p-6 md:grid grid-cols-3 gap-8">
         {{-- En-tête du candidat --}}
         <div class="flex flex-col items-center text-center">
-            @php
-                $photo = '';
-
-                if ($candidat->photo) {
-                    $extension = pathinfo($candidat->photo, PATHINFO_EXTENSION);
-
-                    if ($extension == 'jpg') {
-                        $photo = 'candidatFile/photo-' . $candidat->user->student_number . '.jpg';
-                    } elseif ($extension == 'png') {
-                        $photo = 'candidatFile/photo-' . $candidat->user->student_number . '.png';
-                    }
-                }
-            @endphp
             <img class="w-36 h-36 rounded-full object-cover border-4 border-green-600 shadow-lg mb-4"
-                src="{{ $candidat->photo ? $photo : asset('img/profil.jpg') }}" alt="Candidat">
+                src="{{ asset('candidatFile/photo-' . $candidat->id . '.jpg') }}" alt="Candidat">
 
             <h1 class="text-2xl font-extrabold text-white mb-2">{{ $candidat->user->name }}</h1>
             @php
@@ -116,19 +103,9 @@
             </ul>
 
             @if ($candidat->affiche)
-                @php
-                    $affiche = '';
-
-                    $extension = pathinfo($candidat->affiche, PATHINFO_EXTENSION);
-
-                    if ($extension == 'jpg') {
-                        $affiche = 'candidatFile/affiche-' . $candidat->user->student_number . '.jpg';
-                    } elseif ($extension == 'png') {
-                        $affiche = 'candidatFile/affiche-' . $candidat->user->student_number . '.png';
-                    }
-                @endphp
                 <div class="rounded-2xl shadow-md p-4 mt-8">
-                    <img src="{{ $affiche }}" alt="Affiche de campagne" class="rounded-xl shadow">
+                    <img src="{{ asset('candidatFile/affiche-' . $candidat->id . '.jpg') }}" alt="Affiche de campagne"
+                        class="rounded-xl shadow">
                 </div>
             @endif
 

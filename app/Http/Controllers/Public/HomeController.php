@@ -10,8 +10,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('public.home', [
-            'communiques' => Communique::all()->sortByDesc('created_at'),
-        ]);
+        return view('public.home');
     }
 }
