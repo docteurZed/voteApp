@@ -166,7 +166,7 @@
                                         @endif
                                     </p>
                                     @if ($candidat->slogan)
-                                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">
+                                        <p class="text-gray-500 text-sm mt-2 line-clamp-2 text-center">
                                             {{ Str::limit($candidat->slogan, 90) }}
                                         </p>
                                     @endif

@@ -102,12 +102,10 @@
                 @endif
             </ul>
 
-            @if ($candidat->affiche)
-                <div class="rounded-2xl shadow-md p-4 mt-8">
-                    <img src="{{ asset('candidatFile/affiche-' . $candidat->user->student_number . '.jpg') }}" alt="Affiche de campagne"
-                        class="rounded-xl shadow">
-                </div>
-            @endif
+            <div class="rounded-2xl shadow-md p-4 mt-8">
+                <img src="{{ asset('candidatFile/affiche-' . $candidat->user->student_number . '.jpg') }}"
+                    alt="Affiche de campagne" class="rounded-xl shadow">
+            </div>
 
             @if ($candidat->video)
                 <div class="mt-8">
