@@ -39,9 +39,8 @@
                 </div>
             </div>
 
-            {{-- UPLOADS --}}
-            <div class="space-y-8">
-                {{-- PHOTO --}}
+
+            {{-- <div class="space-y-8">
                 <div>
                     <label for="photo" class="block mb-3 text-green-600 font-semibold">Photo de profil</label>
                     <div class="flex items-center justify-center w-full">
@@ -68,7 +67,7 @@
                     @endif
                 </div>
 
-                {{-- AFFICHE --}}
+                
                 <div>
                     <label for="affiche" class="block mb-3 text-green-600 font-semibold">Affiche de campagne</label>
                     <div class="flex items-center justify-center w-full">
@@ -94,7 +93,7 @@
                             class="mt-3 w-40 rounded-lg border-2 border-green-600 object-cover mx-auto">
                     @endif
                 </div>
-            </div>
+            </div> --}}
 
             {{-- VIDÉO --}}
             <div>
@@ -132,7 +131,8 @@
 
         afficheInput.addEventListener('change', () => {
             if (afficheInput.files.length > 0) {
-                afficheText.innerHTML = `<span class="font-semibold text-red-500">${afficheInput.files[0].name}</span>`;
+                afficheText.innerHTML =
+                    `<span class="font-semibold text-red-500">${afficheInput.files[0].name}</span>`;
             } else {
                 afficheText.innerHTML =
                     `<span class="font-semibold text-red-500">Cliquez pour téléverser</span> ou glissez-déposez`;
