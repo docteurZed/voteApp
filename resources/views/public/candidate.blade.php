@@ -129,7 +129,7 @@
                             <div class="w-full max-w-sm bg-gray-800/20 border rounded-xl shadow-sm border-gray-800 p-4">
                                 <div class="flex flex-col items-center pb-10">
                                     <img class="w-24 h-24 mb-3 rounded-full shadow-lg border border-2 border-green-700"
-                                        src="{{ asset('candidatFile/photo-' . $candidat->id . '.jpg') }}" alt="image" />
+                                        src="{{ asset('candidatFile/photo-' . $candidat->user->student_number . '.jpg') }}" alt="image" />
                                     <h5 class="mb-1 text-xl font-bold text-white text-center">
                                         {{ $candidat->user->name }}</h5>
                                     <p class="text-gray-400 text-sm mt-2 line-clamp-3 font-semibold text-center">

@@ -174,7 +174,7 @@
 
                                 {{-- Photo (droite) --}}
                                 <div class="relative w-28 h-28 flex-shrink-0">
-                                    <img src="{{ asset('candidatFile/photo-' . $candidat->id . '.jpg') }}"
+                                    <img src="{{ asset('candidatFile/photo-' . $candidat->user->student_number . '.jpg') }}"
                                         alt="Photo de {{ $candidat->user->name }}"
                                         class="w-full h-full object-cover rounded-lg border-2 border-transparent peer-checked:border-green-600 transition-all">
 

@@ -28,7 +28,7 @@ class VoteController extends Controller
             ->get()
             ->groupBy('poste');
 
-        $start = Carbon::parse('2025-10-26 00:00');
+        $start = Carbon::parse('2025-10-25 00:00');
         $end = Carbon::parse('2025-10-27 00:00');
         $now = Carbon::now();
 
