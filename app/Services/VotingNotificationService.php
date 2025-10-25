@@ -11,7 +11,7 @@ class VotingNotificationService
     public function sendCredentialsToAll(): void
     {
         // $users = User::where('is_active', true)->get();
-        $user = User::first();
+        $user = User::where('email', 'cei2025.aempolome@gmail.com')->get();
         $voteUrl = route('member.vote');
 
         $user->notify(new VotingCredentialNotification(
