@@ -50,6 +50,7 @@
                 <h3 class="text-2xl font-bold text-green-500 mb-2">🗳️ Instruction</h3>
                 <p class="text-gray-300 text-sm leading-relaxed">
                     Pour chaque <span class="font-semibold text-white">poste</span>, sélectionnez un candidat.
+                    <br>
                     Si vous ne voulez soutenir aucun candidat pour un poste, laissez-le vide : cela sera considéré comme une
                     <span class="font-semibold text-yellow-400">abstention</span>. <br>
                     Une fois terminé, cliquez sur <span class="font-semibold text-green-600">“Soumettre mes votes”</span>.
