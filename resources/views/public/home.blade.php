@@ -188,6 +188,12 @@
             @php
                 $communiques = [
                     [
+                        'id' => 8,
+                        'description' =>
+                            "Informations relatives au processus de vote pour le renouvellement du bureau exécutif local AEMPO-LOME.",
+                        'published_at' => \Carbon\Carbon::create(2025, 10, 25)->format('d M Y'),
+                    ],
+                    [
                         'id' => 7,
                         'description' =>
                             "Annonce du débat électoral des candidats pour l'élection du bureau exécutif local AEMPO-LOME.",
