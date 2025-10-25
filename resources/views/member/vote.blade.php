@@ -25,6 +25,21 @@
             @endforeach
         @endif
 
+        <div class="bg-gray-900/60 rounded-2xl p-6 shadow-md mb-10 text-center">
+            <h3 class="text-xl font-bold text-white mb-3">Taux de participation</h3>
+            <p class="text-gray-300 mb-2">
+                <span class="text-red-600 font-semibold">{{ $totalVotants }}</span> votant{{ $totalVotants > 1 ? 's' : '' }} sur <span class="font-semibold">{{ $totalElecteurs }}</span>
+                (<span class="font-bold text-red-600">{{ $tauxParticipation }}%</span>)
+            </p>
+
+            {{-- Barre de progression --}}
+            <div class="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
+                <div class="bg-green-600 h-3 rounded-full transition-all duration-700 ease-out"
+                    style="width: {{ $tauxParticipation }}%">
+                </div>
+            </div>
+        </div>
+
         @if ($hasVoted)
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-extrabold text-white">

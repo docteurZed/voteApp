@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ResultController;
 use App\Http\Controllers\Admin\UserImportController;
 use App\Http\Controllers\Candidate\CandidatePersonalInfoController;
 use App\Http\Controllers\Candidate\DashboardController;
@@ -15,6 +16,8 @@ Route::get('/candidats', [CandidateController::class, 'index'])->name('candidate
 Route::get('/candidat-{id}/detail', [CandidateController::class, 'show'])->name('candidate.detail');
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/resultats', [ResultController::class, 'index'])->name('result.index');
 
     Route::prefix('membre')->name('member.')->group(function () {
         Route::get('/vote', [VoteController::class, 'index'])->name('vote');

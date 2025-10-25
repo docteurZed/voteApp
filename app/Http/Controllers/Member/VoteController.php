@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member;
 use App\Http\Controllers\Controller;
 use App\Models\Candidat;
 use App\Models\Election;
+use App\Models\User;
 use App\Models\Vote;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -32,10 +33,16 @@ class VoteController extends Controller
         $end = Carbon::parse('2025-10-27 00:00');
         $now = Carbon::now();
 
+        $totalVotants = Vote::where('election_id', $election->id)->distinct('user_id')->count('user_id');
+        $totalElecteurs = User::count(); // ou adapte selon ton modèle (ex: User::where('role', 'member')->count())
+        $tauxParticipation = $totalElecteurs > 0
+            ? round(($totalVotants / $totalElecteurs) * 100, 2)
+            : 0;
+
         if ($now->lt($start) || $now->gt($end)) {
             return view('member.vote_attempt', compact('start', 'end', 'now'));
         } else {
-            return view('member.vote', compact('candidats', 'votes', 'election', 'hasVoted'));
+            return view('member.vote', compact('candidats', 'votes', 'election', 'hasVoted', 'tauxParticipation', 'totalVotants', 'totalElecteurs'));
         }
     }
 
