@@ -45,7 +45,7 @@ class VotingCredentialNotification extends Notification
             ->line('**Adresse e-mail :** ' . $this->email)
             ->line('**Mot de passe :** ' . $this->password)
             ->action('Accéder à la plateforme de vote', $this->voteUrl)
-            ->line('Nous vous invitons à vous connecter pendant la période du vote pour exprimer votre choix.')
+            ->line('Nous vous invitons à vous connecter pendant la période du vote, en cliquant sur le bouton ci-dessus, pour exprimer votre choix.')
             ->line('Nous vous remercions pour votre engagement et votre participation à la vie de notre association.')
             ->salutation('Cordialement,')
             ->line('**La Commission Électorale Indépendante (CEI)** AEMPO–Lomé');
