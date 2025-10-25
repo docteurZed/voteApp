@@ -10,7 +10,10 @@ class VotingNotificationService
 {
     public function sendCredentialsToAll(): void
     {
-        $users = User::where('is_active', true)->latest()->take(162)->get();
+        $users = User::where('is_active', true)
+                        ->latest()
+                        ->take(58)
+                        ->get();
         $voteUrl = route('member.vote');
 
         foreach ($users as $user) {
