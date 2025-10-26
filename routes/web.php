@@ -19,10 +19,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/vote/resultats', [ResultController::class, 'index'])->name('result.index');
 
-    Route::prefix('membre')->name('member.')->group(function () {
-        Route::get('/vote', [VoteController::class, 'index'])->name('vote');
-        Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
-    });
+    // Route::prefix('membre')->name('member.')->group(function () {
+    //     Route::get('/vote', [VoteController::class, 'index'])->name('vote');
+    //     Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
+    // });
 
     Route::prefix('candidat')->name('candidat.')->group(function () {
         Route::get('/tableau-de-bord', [DashboardController::class, 'index'])->name('dashboard');
