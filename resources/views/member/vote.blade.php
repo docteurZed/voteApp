@@ -49,13 +49,24 @@
             <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8 text-center">
                 <h3 class="text-2xl font-bold text-green-500 mb-2">🗳️ Instruction</h3>
                 <p class="text-gray-300 text-sm leading-relaxed">
-                    Pour chaque <span class="font-semibold text-white">poste</span>, sélectionnez un candidat.
+                    Pour chaque <span class="font-semibold text-white">poste</span> affiché ci-dessous, vous devez
+                    sélectionner
+                    <strong>un seul candidat</strong> parmi la liste proposée.
+                    <br><br>
+                    <span class="text-red-500 font-bold">⚠️ Important :</span> Vous êtes invité à voter
+                    <strong>pour un candidat par poste</strong>
+                    (par exemple : 1 Président, 1 Trésorier, 1 Secrétaire, etc.).
                     <br>
-                    Si vous ne voulez soutenir aucun candidat pour un poste, laissez-le vide : cela sera considéré comme une
-                    <span class="font-semibold text-yellow-400">abstention</span>. <br>
-                    Une fois terminé, cliquez sur <span class="font-semibold text-green-600">“Soumettre mes votes”</span>.
+                    Si vous ne souhaitez soutenir aucun candidat pour un poste donné, laissez ce poste vide ;
+                    cela sera automatiquement considéré comme une
+                    <span class="font-semibold text-yellow-400">abstention</span>.
+                    <br><br>
+                    Une fois votre sélection terminée, cliquez sur
+                    <span class="font-semibold text-green-600">« Soumettre mes votes »</span> pour valider votre
+                    participation.
                     <br>
-                    Après soumission, <span class="text-red-600">aucune modification ne sera possible</span>.
+                    Après la soumission, <span class="text-red-600 font-semibold">aucune modification ne sera
+                        possible</span>.
                 </p>
             </div>
         @endif
@@ -63,7 +74,8 @@
         <div class="bg-gray-900/60 rounded-2xl p-6 shadow-md mb-10 text-center">
             <h3 class="text-xl font-bold text-white mb-3">Taux de participation</h3>
             <p class="text-gray-300 mb-2">
-                <span class="text-red-600 font-semibold">{{ $totalVotants }}</span> votant{{ $totalVotants > 1 ? 's' : '' }} sur <span class="font-semibold">{{ $totalElecteurs }}</span>
+                <span class="text-red-600 font-semibold">{{ $totalVotants }}</span> votant{{ $totalVotants > 1 ? 's' : '' }}
+                sur <span class="font-semibold">{{ $totalElecteurs }}</span>
                 (<span class="font-bold text-red-600">{{ $tauxParticipation }}%</span>)
             </p>
 
