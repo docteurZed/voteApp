@@ -99,7 +99,7 @@
                     $labelPoste = $nomsPostes[$poste] ?? ucfirst(str_replace('_', ' ', $poste));
                 @endphp
 
-                <div class="rounded-2xl p-4 sm:p-6 shadow-md bg-gray-900/60 backdrop-blur-md">
+                <div class="rounded-2xl p-2 sm:p-6 shadow-md bg-gray-900/60 backdrop-blur-md">
                     <div class="mb-6 text-center">
                         <h3
                             class="text-2xl font-bold text-white bg-gradient-to-r from-red-600 via-transparent to-red-600 py-2 rounded-lg">
