@@ -21,7 +21,7 @@ class ResultController extends Controller
             return view('admin.results')->with('message', 'Aucune élection trouvée.');
         }
 
-        $totalVotants = Vote::where('election_id', $election->id)->groupBy('user_id')->count();
+        $totalVotants = Vote::where('election_id', $election->id)->count();
         $totalElecteurs = User::count(); // ou adapte selon ton modèle (ex: User::where('role', 'member')->count())
         $tauxParticipation = $totalElecteurs > 0
             ? round(($totalVotants / $totalElecteurs) * 100, 2)

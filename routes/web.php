@@ -21,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('admin/membre')->name('member.')->group(function () {
         Route::get('/vote', [VoteController::class, 'index'])->name('vote');
-        // Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
+        Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
     });
 
     Route::prefix('candidat')->name('candidat.')->group(function () {
