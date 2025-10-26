@@ -30,7 +30,7 @@ class VoteController extends Controller
             ->groupBy('poste');
 
         $start = Carbon::parse('2025-10-26 00:00');
-        $end = Carbon::parse('2025-10-26 23:00');
+        $end = Carbon::parse('2025-10-26 23:59');
         $now = Carbon::now();
 
         $totalVotants = Vote::where('election_id', $election->id)->count();
