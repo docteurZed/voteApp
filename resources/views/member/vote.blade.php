@@ -221,18 +221,18 @@
             {{-- Bouton de soumission --}}
             @unless ($hasVoted)
                 <div class="text-center mt-6">
-                    <button type="button" data-modal-target="default-modal" data-modal-toggle="default-modal"
+                    <button type="submit" 
                         class="px-8 py-3 bg-green-700 text-white font-semibold text-lg rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-green-300 transition cursor-pointer">
                         Soumettre mes votes
                     </button>
                 </div>
 
-                <div id="default-modal" tabindex="-1" aria-hidden="true"
+                {{-- <div id="default-modal" tabindex="-1" aria-hidden="true"
                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                     <div class="relative p-4 w-full max-w-2xl max-h-full">
-                        <!-- Modal content -->
+                        
                         <div class="relative rounded-lg shadow-sm bg-gray-800">
-                            <!-- Modal header -->
+                            
                             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-700">
                                 <h3 class="text-xl font-semibold text-white">
                                     Soumission du vote
@@ -248,7 +248,7 @@
                                     <span class="sr-only">Close modal</span>
                                 </button>
                             </div>
-                            <!-- Modal body -->
+                            
                             <div class="p-6">
                                 <p class="text-gray-300">
                                     Vous êtes sur le point de <span class="text-green-500 font-semibold">soumettre définitivement</span> vos
@@ -261,7 +261,7 @@
                                         possible.</span>
                                 </p>
                             </div>
-                            <!-- Modal footer -->
+                            
                             <div class="flex items-center justify-end p-4 md:p-5 border-t rounded-b border-gray-700 gap-4">
                                 <button data-modal-hide="default-modal" type="button"
                                     class="py-2.5 px-5 ms-3 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-4 focus:ring-gray-800 bg-gray-900 text-gray-400 border-gray-700 hover:text-white hover:bg-gray-700 cursor-pointer">Annuler</button>
@@ -271,7 +271,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             @endunless
         </form>
     </section>
