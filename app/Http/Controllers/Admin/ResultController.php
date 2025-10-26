@@ -21,7 +21,7 @@ class ResultController extends Controller
             return view('admin.results')->with('message', 'Aucune élection trouvée.');
         }
 
-        $totalVotants = Vote::where('election_id', $election->id)->distinct('user_id')->count('user_id');
+        $totalVotants = Vote::where('election_id', $election->id)->count();
         $totalElecteurs = User::count(); // ou adapte selon ton modèle (ex: User::where('role', 'member')->count())
         $tauxParticipation = $totalElecteurs > 0
             ? round(($totalVotants / $totalElecteurs) * 100, 2)
@@ -42,8 +42,8 @@ class ResultController extends Controller
         foreach ($candidats as $poste => $candidatsPoste) {
             $totalVotes = $candidatsPoste->sum('votes_count');
 
-            $results[$poste] = $candidatsPoste->map(function ($candidat) use ($totalVotes) {
-                $candidat->percentage = $totalVotes > 0 ? round(($candidat->votes_count / $totalVotes) * 100, 2) : 0;
+            $results[$poste] = $candidatsPoste->map(function ($candidat) use ($totalVotants) {
+                $candidat->percentage = $totalVotants > 0 ? round(($candidat->votes_count / $totalVotants) * 100, 2) : 0;
                 return $candidat;
             });
         }

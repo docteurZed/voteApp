@@ -33,7 +33,7 @@ class VoteController extends Controller
         $end = Carbon::parse('2025-10-27 00:00');
         $now = Carbon::now();
 
-        $totalVotants = Vote::where('election_id', $election->id)->distinct('user_id')->count('user_id');
+        $totalVotants = Vote::where('election_id', $election->id)->count();
         $totalElecteurs = User::count(); // ou adapte selon ton modèle (ex: User::where('role', 'member')->count())
         $tauxParticipation = $totalElecteurs > 0
             ? round(($totalVotants / $totalElecteurs) * 100, 2)

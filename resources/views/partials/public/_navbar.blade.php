@@ -5,7 +5,7 @@
             <span class="self-center text-2xl font-bold whitespace-nowrap text-red-600">{{ config('app.name') }}</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            @if (!request()->routeIs('member.vote') || !request()->routeIs('result.index'))
+            @if (!request()->routeIs('member.vote'))
                 <a href="{{ route('member.vote') }}"
                 class="text-white hover:bg-green-700 focus:ring-4 focus:outline-none font-semibold rounded-lg text-sm px-4 py-3 text-center bg-green-600 focus:ring-green-800">Voter</a>
             @endif
