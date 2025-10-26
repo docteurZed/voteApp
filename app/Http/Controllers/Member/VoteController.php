@@ -15,35 +15,7 @@ class VoteController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
-        $election = Election::first();
-
-        $hasVoted = $user->hasVoted(optional($election)->id);
-
-        $votes = $hasVoted
-            ? $user->votes()->forElection(optional($election)->id)->get()->keyBy('poste')
-            : collect();
-
-        $candidats = Candidat::where('election_id', optional($election)->id)
-            ->where('statut', 'valide')
-            ->get()
-            ->groupBy('poste');
-
-        $start = Carbon::parse('2025-10-26 00:00');
-        $end = Carbon::parse('2025-10-27 00:00');
-        $now = Carbon::now();
-
-        $totalVotants = Vote::where('election_id', $election->id)->count();
-        $totalElecteurs = User::count(); // ou adapte selon ton modèle (ex: User::where('role', 'member')->count())
-        $tauxParticipation = $totalElecteurs > 0
-            ? round(($totalVotants / $totalElecteurs) * 100, 2)
-            : 0;
-
-        if ($now->lt($start) || $now->gt($end)) {
-            return view('member.vote_attempt', compact('start', 'end', 'now'));
-        } else {
-            return view('member.vote', compact('candidats', 'votes', 'election', 'hasVoted', 'tauxParticipation', 'totalVotants', 'totalElecteurs'));
-        }
+        abort(403);    
     }
 
     public function store(Request $request)
