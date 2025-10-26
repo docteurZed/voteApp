@@ -101,7 +101,7 @@
                                         {{ Str::limit($candidat->slogan, 90) }}</p>
                                 @endif
                                 <p class="text-green-400 font-bold mt-2">
-                                    {{ $candidat->votes_count }} vote{{ $candidat->votes_count > 1 ? 's' : '' }} -
+                                    {{-- {{ $candidat->votes_count }} vote{{ $candidat->votes_count > 1 ? 's' : '' }} - --}}
                                     {{ $candidat->percentage }}%
                                 </p>
 
