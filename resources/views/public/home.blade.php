@@ -17,9 +17,9 @@
                     </div>
                 </div>
                 <p class="text-gray-300 mb-6 leading-relaxed">
-                    L’<span class="font-bold text-red-700">AEMPO</span> est l’association représentative des étudiants
+                    L’<span class="font-bold text-red-700">AEMPO-LOME</span> est l’association représentative des étudiants
                     en médecine, pharmacie et odonto-stomatologie
-                    du Togo. Elle œuvre pour la formation, la solidarité et l’épanouissement de la
+                    de Lomé. Elle œuvre pour la formation, la solidarité et l’épanouissement de la
                     communauté médicale étudiante,
                     à travers des projets scientifiques, sociaux et humanitaires.
                 </p>
