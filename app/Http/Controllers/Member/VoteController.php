@@ -60,7 +60,7 @@ class VoteController extends Controller
         }
 
         $request->validate([
-            'vote' => 'required|array',
+            'vote' => 'nullable|array',
         ]);
 
         foreach ($request->vote as $poste => $candidat_id) {
