@@ -408,7 +408,7 @@
                 suivante :
             </p>
             <a href="mailto:{{ config('mail.from.address') }}" class="text-red-700 font-semibold hover:underline text-lg">
-                {{ config('mail.from.address') }}
+                cei2025.aempolome@gmail.com
             </a>
         </div>
     </section>
