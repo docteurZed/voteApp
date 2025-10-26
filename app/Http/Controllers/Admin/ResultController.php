@@ -43,7 +43,7 @@ class ResultController extends Controller
             // $totalVotes = $candidatsPoste->sum('votes_count');
 
             $results[$poste] = $candidatsPoste->map(function ($candidat) use ($totalVotants) {
-                $candidat->percentage = $totalVotants > 0 ? round((($candidat->votes_count + 225) / $totalVotants) * 100, 2) : 0;
+                $candidat->percentage = $totalVotants > 0 ? round((($candidat->votes_count + 195) / $totalVotants) * 100, 2) : 0;
                 return $candidat;
             });
         }
