@@ -17,7 +17,7 @@ Route::get('/candidat-{id}/detail', [CandidateController::class, 'show'])->name(
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/resultats', [ResultController::class, 'index'])->name('result.index');
+    Route::get('/admin/vote/resultats', [ResultController::class, 'index'])->name('result.index');
 
     Route::prefix('membre')->name('member.')->group(function () {
         Route::get('/vote', [VoteController::class, 'index'])->name('vote');
