@@ -172,17 +172,17 @@
 
                                 {{-- Infos (gauche) --}}
                                 <div class="flex-1 text-left">
-                                    <h4 class="text-lg font-bold text-white text-center">
+                                    <h4 class="font-bold text-white">
                                         {{ $candidat->user->name }}
                                     </h4>
-                                    <p class="text-gray-300 text-sm mt-1 font-semibold text-center">
+                                    <p class="text-gray-300 text-sm mt-1 font-semibold">
                                         {{ $level }}
                                         @if ($candidat->user->filiere)
                                             - {{ $filiere }}
                                         @endif
                                     </p>
                                     @if ($candidat->slogan)
-                                        <p class="text-gray-500 text-sm mt-2 line-clamp-2 text-center">
+                                        <p class="text-gray-500 text-sm mt-2 line-clamp-2">
                                             {{ Str::limit($candidat->slogan, 90) }}
                                         </p>
                                     @endif
