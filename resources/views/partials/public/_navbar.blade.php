@@ -5,10 +5,10 @@
             <span class="self-center text-2xl font-bold whitespace-nowrap text-red-600">{{ config('app.name') }}</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            @if (!request()->routeIs('member.vote'))
+            {{-- @if (!request()->routeIs('member.vote'))
                 <a href="{{ route('member.vote') }}"
                 class="text-white hover:bg-green-700 focus:ring-4 focus:outline-none font-semibold rounded-lg text-sm px-4 py-3 text-center bg-green-600 focus:ring-green-800">Voter</a>
-            @endif
+            @endif --}}
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
                 aria-controls="navbar-sticky" aria-expanded="false">
