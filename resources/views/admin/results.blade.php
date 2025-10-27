@@ -5,7 +5,7 @@
 
         <div class="text-center mb-10">
             <h2 class="text-3xl font-extrabold text-white">
-                Résultats de l'élection : {{ $election->title }}
+                {{ $election->title }}
             </h2>
             <div class="mt-3">
                 <span class="w-32 h-1 bg-green-600 rounded-full inline-block"></span>
@@ -49,7 +49,7 @@
             <div class="rounded-2xl p-4 sm:p-6 shadow-md bg-gray-900/60 backdrop-blur-md mb-8">
                 <div class="mb-6 text-center">
                     <h3
-                        class="text-2xl font-bold text-white bg-gradient-to-r from-red-600 via-transparent to-red-600 py-2 rounded-lg">
+                        class="text-xl font-bold text-white bg-gradient-to-r from-red-600 via-transparent to-red-600 py-2 rounded-lg">
                         Poste de {{ $labelPoste }}
                     </h3>
                 </div>

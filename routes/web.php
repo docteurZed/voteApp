@@ -15,9 +15,9 @@ Route::get('/a-propos', [AboutController::class, 'index'])->name('about');
 Route::get('/candidats', [CandidateController::class, 'index'])->name('candidate');
 Route::get('/candidat-{id}/detail', [CandidateController::class, 'show'])->name('candidate.detail');
 
-Route::middleware(['auth'])->group(function () {
+Route::get('/resultats', [ResultController::class, 'index'])->name('result.index');
 
-    Route::get('/admin/vote/resultats', [ResultController::class, 'index'])->name('result.index');
+Route::middleware(['auth'])->group(function () {
 
     Route::prefix('/membre')->name('member.')->group(function () {
         Route::get('/vote', [VoteController::class, 'index'])->name('vote');
